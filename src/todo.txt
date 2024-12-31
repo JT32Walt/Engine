@@ -1,0 +1,16 @@
+Objectives                                          Complete 
+____________                                        ________
+Render Basic Colored Squares                        IP
+Moveable Square 
+Camera Following Square
+Render from Basic Map
+Implament Basic Materials
+Render with final pixel group size (Dumb Way)
+Basic Colission
+Basic Physics
+Basic Player
+Basic Map generation and Local Area Rendering
+Better optimized Map Rendering
+
+
+
