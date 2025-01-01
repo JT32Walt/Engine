@@ -1,10 +1,21 @@
 #include "SDL.h"
+#include "SDL_image.h"
+
 #include "globals.h"
 #include "glm.hpp"
+#include "glad.h"
 
 #include <iostream>
 
 #undef main
+
+void GetVersionInfo()
+{
+    std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
+    std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
+    std::cout << "Version: " << glGetString(GL_VERSION) << std::endl;
+    std::cout << "Shading Language: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+}
 
 void InitalizeProgram()
 {
@@ -35,6 +46,14 @@ void InitalizeProgram()
         std::cout << "OpenGL Context Failed" << std::endl;
         exit(1);
     }
+
+    if(!gladLoadGLLoader(SDL_GL_GetProcAddress))
+    {
+        std::cout << "Glad not initalized" << std::endl;
+        exit(1);
+    }
+    
+    GetVersionInfo();
 }
 
 void Input()
