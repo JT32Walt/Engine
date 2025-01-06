@@ -88,7 +88,7 @@ void PreDraw()
     glDisable(GL_CULL_FACE);
     glViewport(0,0, gScreenWidth, gScreenHeight);
     glClearColor(1.f, 1.f, 0.f, 1.f);
-
+    
     glUseProgram(gGraphicsPipelineShaderProgram);
 }
 
@@ -98,6 +98,7 @@ void Draw()
     glBindBuffer(GL_ARRAY_BUFFER, gVertexBufferObject);
     glDrawArrays(GL_TRIANGLES,0, 3);
 }
+
 
 void MainLoop()
 {
@@ -135,6 +136,7 @@ void VertexSpecification()
     glBindBuffer(GL_ARRAY_BUFFER, gVertexBufferObject);
     glBufferData(GL_ARRAY_BUFFER, vertexPosition.size() * sizeof(GLfloat), vertexPosition.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
+
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
     glBindVertexArray(0);
     glDisableVertexAttribArray(0);
